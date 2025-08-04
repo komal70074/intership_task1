@@ -22,14 +22,17 @@ mapp
 3: Standardize text values like gender, country names, etc.
      mapp['Gender']= (mapp['Gender'].str.upper().replace({"F": "Female","M": "Male"}))
      mapp
+     
 4: Convert date formats to a consistent type (e.g., dd-mm-yyyy).
       mapp['ScheduledDay'] = pd.to_datetime(mapp['ScheduledDay']).dt.strftime('%d-%m-%Y')
       mapp['AppointmentDay'] = pd.to_datetime(mapp['AppointmentDay']).dt.strftime('%d-%m-%Y')
       mapp
+      
 5: Rename column headers to be clean and uniform (e.g., lowercase, no spaces).
     mapp=mapp.rename(columns={'PatientId':'Patient_id','AppointmentID':'Appointment_id','ScheduledDay':'Scheduled_date',
                          'AppointmentDay':'Appointment_date','Hipertension':'Hypertension','Handcap':'Handicap','SMS_received':'sms_recevied'})
     mapp
+    
 6: Check and fix data types (e.g., age should be int, date as datetime).
       mapp['Scheduled_date'] = pd.to_datetime(mapp['Scheduled_date'])
       mapp['Appointment_date'] = pd.to_datetime(mapp['Appointment_date'])
