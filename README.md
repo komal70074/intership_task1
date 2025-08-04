@@ -13,7 +13,7 @@ mapp
    mapp.isnull().sum()
    
 2: Remove duplicate rows using .drop_duplicates() or Excel’s “Remove Duplicates”.
-    m_dups = mapp[mapp.duplicated]
+   m_dups = mapp[mapp.duplicated]
    print (len(m_dups))
    mapp2 = mapp.drop(columns=['AppointmentID'])
    print("Duplicates across fields:", mapp2.duplicated().sum())
